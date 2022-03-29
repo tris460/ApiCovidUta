@@ -10,13 +10,14 @@ app.set('port', 3000);
 //Middlewares
 app.use(morgan('dev')); 
 app.use(express.json());
-app.use(cors({origin: 'http://localhost:8100'}));
+app.use(cors({ origin: 'http://localhost:8100' }));
 
 //Routes
 
-app.use('/api/users',require('./routes/users.routes'));
+app.use('/api/users', require('./routes/users.routes'));
+app.use('/api/illness', require('./routes/illness.routes'));
 
 //Starting the server
-app.listen(app.get('port'), ()=>{
-    console.log("Server on port "+app.get('port'));
+app.listen(app.get('port'), () => {
+    console.log("Server on port " + app.get('port'));
 });

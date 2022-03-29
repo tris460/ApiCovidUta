@@ -9,10 +9,20 @@ userCtrl.getUsers = async (req, res) => {
 
 userCtrl.createUser = async (req,res) => {
     const newUsr = new user({
-        name: req.body.name,
+        id: req.body.id,
         role: req.body.role,
-        password : req.body.password,
-        user: req.body.user
+        email: req.body.email,
+        password: req.body.password,
+        name: req.body.name,
+        lastName: req.body.lastName,
+        secondLastName: req.body.secondLastName,
+        age: req.body.age,
+        allergies: req.body.allergies,
+        otherIllnesses: req.body.otherIllnesses,
+        career: req.body.career,
+        degree: req.body.degree,
+        group: req.body.group,
+        status: req.body.status
     });
     await newUsr.save();
     res.json({
@@ -29,10 +39,20 @@ userCtrl.getUser = async (req,res) => {
 userCtrl.editEmployee = async (req,res) => {
     const { id } = req.params;
     const newUsr = {
-        name : req.body.name,
-        role : req.body.role,
-        password : req.body.password,
-        user: req.body.user
+        id: req.body.id,
+        role: req.body.role,
+        email: req.body.email,
+        password: req.body.password,
+        name: req.body.name,
+        lastName: req.body.lastName,
+        secondLastName: req.body.secondLastName,
+        age: req.body.age,
+        allergies: req.body.allergies,
+        otherIllnesses: req.body.otherIllnesses,
+        career: req.body.career,
+        degree: req.body.degree,
+        group: req.body.group,
+        status: req.body.status
     }
     //(id, objeto nuevo, si no existe, crealo)
     await user.findByIdAndUpdate(id, {$set: newUsr}, {new:true});

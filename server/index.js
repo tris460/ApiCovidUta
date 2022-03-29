@@ -15,7 +15,6 @@ app.use(cors({origin: 'http://localhost:8100'}));
 //Routes
 
 app.use('/api/users',require('./routes/users.routes'));
-app.use('/api/contacts',require('./routes/contacts.routes'));
 
 //Starting the server
 app.listen(app.get('port'), ()=>{

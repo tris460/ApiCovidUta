@@ -15,7 +15,7 @@ const UserSchema = new Schema({
     otherIllnesses: { type: Array, required: false },
     career: { type: String, required: true },
     degree: { type: Number, required: true },
-    group: { type: CharacterData, required: true },
+    group: { type: String, required: true },
     status: { type: Number, required: true }
 });
 

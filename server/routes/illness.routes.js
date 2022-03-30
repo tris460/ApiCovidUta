@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const illCtrl = require('../controllers/illness.controller');
+const illnessCtrl = require('../controllers/illness.controller');
 
-router.get('/', illCtrl.getIllness);
+router.get('/', illnessCtrl.getIllness);
 
-router.post('/',illCtrl.createIllness);
+router.post('/',illnessCtrl.createIllness);
 
-router.get('/:id',illCtrl.getIllness);
+router.get('/:id',illnessCtrl.getIllness);
 
-router.put('/:id',illCtrl.editIllness);
+router.put('/:id',illnessCtrl.editIllness);
 
-router.delete('/:id',illCtrl.deleteIllness);
+router.delete('/:id',illnessCtrl.deleteIllness);
 
 module.exports = router;

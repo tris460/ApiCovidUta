@@ -1,4 +1,3 @@
-const { Number } = require('mongoose');
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
@@ -9,4 +8,4 @@ const IllnessSchema = new Schema({
     status: { type: Number, required: true }
 });
 
-module.exports = mongoose.model('Illness', IllnessSchema);
+module.exports = mongoose.model('Illness', IllnessSchema, 'illness');

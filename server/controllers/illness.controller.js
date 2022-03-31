@@ -2,7 +2,8 @@ const illness = require('../models/illness');
 const illnessCtrl = {};
 
 
-illnessCtrl.getIllness = async (req, res) => {
+illnessCtrl.getIllnesses = async (req, res) => {
+    console.log('getIllnes')
     const ill = await illness.find();
     res.json(ill);
 };

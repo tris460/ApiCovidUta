@@ -3,7 +3,7 @@ const router = express.Router();
 
 const illnessCtrl = require('../controllers/illness.controller');
 
-router.get('/', illnessCtrl.getIllness);
+router.get('/', illnessCtrl.getIllnesses);
 
 router.post('/',illnessCtrl.createIllness);
 

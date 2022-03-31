@@ -3,6 +3,7 @@ const userCtrl = {};
 
 
 userCtrl.getUsers = async (req, res) => {
+    console.log('getUsers')
     const users = await user.find();
     res.json(users);
 };

@@ -10,7 +10,7 @@ app.set('port', 3000);
 //Middlewares
 app.use(morgan('dev')); 
 app.use(express.json());
-app.use(cors());
+app.use(cors({}));
 
 //Routes
 

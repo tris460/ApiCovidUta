@@ -8,7 +8,7 @@ illnessCtrl.getIllnesses = async (req, res) => {
 };
 
 illnessCtrl.createIllness = async (req,res) => {
-    const newIllness = new user({
+    const newIllness = new illness({
         idUser: req.body.idUser,
         strDate: req.body.strDate,
         strName: req.body.strName,

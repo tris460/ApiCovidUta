@@ -3,17 +3,18 @@ const illnessCtrl = {};
 
 
 illnessCtrl.getIllnesses = async (req, res) => {
-    console.log('getIllnes')
     const ill = await illness.find();
     res.json(ill);
 };
 
 illnessCtrl.createIllness = async (req,res) => {
     const newIllness = new user({
-        name: req.body.name,
-        symptoms: req.body.symptoms,
-        notes : req.body.notes,
-        status: req.body.status
+        idUser: req.body.idUser,
+        strDate: req.body.strDate,
+        strName: req.body.strName,
+        arrSymptoms: req.body.arrSymptoms,
+        intStatus: req.body.intStatus,
+        strNotes : req.body.strNotes,
     });
     await newIllness.save();
     res.json({
@@ -30,10 +31,12 @@ illnessCtrl.getIllness = async (req,res) => {
 illnessCtrl.editIllness = async (req,res) => {
     const { id } = req.params;
     const newIllness = {
-        name: req.body.name,
-        symptoms: req.body.symptoms,
-        notes : req.body.notes,
-        status: req.body.status
+        idUser: req.body.idUser,
+        strDate: req.body.strDate,
+        strName: req.body.strName,
+        arrSymptoms: req.body.arrSymptoms,
+        intStatus: req.body.intStatus,
+        strNotes : req.body.strNotes,
     }
     //(id, new object, if it doesn't exist create it)
     await illness.findByIdAndUpdate(id, {$set: newIllness}, {new:true});

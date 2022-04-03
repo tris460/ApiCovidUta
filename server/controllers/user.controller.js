@@ -9,20 +9,19 @@ userCtrl.getUsers = async (req, res) => {
 
 userCtrl.createUser = async (req,res) => {
     const newUsr = new user({
-        id: req.body.id,
-        role: req.body.role,
-        email: req.body.email,
-        password: req.body.password,
-        name: req.body.name,
-        lastName: req.body.lastName,
-        secondLastName: req.body.secondLastName,
-        age: req.body.age,
-        allergies: req.body.allergies,
-        otherIllnesses: req.body.otherIllnesses,
-        career: req.body.career,
-        degree: req.body.degree,
-        group: req.body.group,
-        status: req.body.status
+        _id: req.body._id,
+        strR: req.body.strRol,
+        strEmail: req.body.strEmail,
+        strPassword: req.body.strPassword,
+        strName: req.body.strName,
+        strLastName: req.body.strLastName,
+        strSecondLastName: req.body.strSecondLastName,
+        intAge: req.body.intAge,
+        arrAllergies: req.body.arrAllergies,
+        arrPreviousIllnesses: req.body.arrPreviousIllnesses,
+        strCareer: req.body.strCareer,
+        intGrade: req.body.intGrade,
+        chaGroup: req.body.chaGroup,
     });
     await newUsr.save();
     res.json({
@@ -39,32 +38,31 @@ userCtrl.getUser = async (req,res) => {
 userCtrl.editEmployee = async (req,res) => {
     const { id } = req.params;
     const newUsr = {
-        id: req.body.id,
-        role: req.body.role,
-        email: req.body.email,
-        password: req.body.password,
-        name: req.body.name,
-        lastName: req.body.lastName,
-        secondLastName: req.body.secondLastName,
-        age: req.body.age,
-        allergies: req.body.allergies,
-        otherIllnesses: req.body.otherIllnesses,
-        career: req.body.career,
-        degree: req.body.degree,
-        group: req.body.group,
-        status: req.body.status
+        _id: req.body._id,
+        strR: req.body.strRol,
+        strEmail: req.body.strEmail,
+        strPassword: req.body.strPassword,
+        strName: req.body.strName,
+        strLastName: req.body.strLastName,
+        strSecondLastName: req.body.strSecondLastName,
+        intAge: req.body.intAge,
+        arrAllergies: req.body.arrAllergies,
+        arrPreviousIllnesses: req.body.arrPreviousIllnesses,
+        strCareer: req.body.strCareer,
+        intGrade: req.body.intGrade,
+        chaGroup: req.body.chaGroup,
     }
     //(id, objeto nuevo, si no existe, crealo)
     await user.findByIdAndUpdate(id, {$set: newUsr}, {new:true});
     res.json({
-        status: 'Employee update'
+        status: 'User updated'
     });
 };
 
 userCtrl.deleteEmployee = async (req,res) => {
     await user.findByIdAndRemove(req.params.id);
     res.json({
-        status: 'Employee deleted'
+        status: 'User deleted'
     });
 };
 

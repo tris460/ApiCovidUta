@@ -2,20 +2,19 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({
-    id: { type: Number, required: true },
-    role: { type: String, required: true },
-    email: { type: String, required: true },
-    password: { type: String, required: true },
-    name: { type: String, required: true },
-    lastName: { type: String, required: true },
-    secondLastName: {type: String, required: false },
-    age: { type: Number, required: true },
-    allergies: { type: Array, required: false },
-    otherIllnesses: { type: Array, required: false },
-    career: { type: String, required: true },
-    degree: { type: Number, required: true },
-    group: { type: String, required: true },
-    status: { type: Number, required: true }
+    _id: { type: Number, required: true },
+    strRol: { type: String, required: true },
+    strEmail: { type: String, required: true },
+    strPassword: { type: String, required: true },
+    strName: { type: String, required: true },
+    strLastName: { type: String, required: true },
+    strSecondLastName: {type: String, required: false },
+    intAge: { type: Number, required: true },
+    arrAllergies: { type: Array, required: false },
+    arrPreviousIllnesses: { type: Array, required: false },
+    strCareer: { type: String, required: true },
+    intGrade: { type: Number, required: true },
+    chaGroup: { type: String, required: true }
 });
 
 module.exports = mongoose.model('Users', UserSchema, 'user');

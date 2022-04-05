@@ -10,7 +10,7 @@ userCtrl.getUsers = async (req, res) => {
 userCtrl.createUser = async (req,res) => {
     const newUsr = new user({
         _id: req.body._id,
-        strR: req.body.strRol,
+        strRol: req.body.strRol,
         strEmail: req.body.strEmail,
         strPassword: req.body.strPassword,
         strName: req.body.strName,

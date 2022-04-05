@@ -12,9 +12,9 @@ const UserSchema = new Schema({
     intAge: { type: Number, required: true },
     arrAllergies: { type: Array, required: false },
     arrPreviousIllnesses: { type: Array, required: false },
-    strCareer: { type: String, required: true },
-    intGrade: { type: Number, required: true },
-    chaGroup: { type: String, required: true }
+    strCareer: { type: String, required: false },
+    intGrade: { type: Number, required: false },
+    chaGroup: { type: String, required: false }
 });
 
 module.exports = mongoose.model('Users', UserSchema, 'user');

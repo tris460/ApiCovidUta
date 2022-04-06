@@ -35,7 +35,7 @@ userCtrl.getUser = async (req,res) => {
     res.json(find);
 };
 
-userCtrl.editEmployee = async (req,res) => {
+userCtrl.editUser = async (req,res) => {
     const { id } = req.params;
     const newUsr = {
         _id: req.body._id,
@@ -59,7 +59,7 @@ userCtrl.editEmployee = async (req,res) => {
     });
 };
 
-userCtrl.deleteEmployee = async (req,res) => {
+userCtrl.deleteUser = async (req,res) => {
     await user.findByIdAndRemove(req.params.id);
     res.json({
         status: 'User deleted'
